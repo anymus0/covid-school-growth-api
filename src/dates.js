@@ -12,4 +12,10 @@ const generateDates = (start, end) => {
   return dates
 }
 
-module.exports = generateDates
+const getToday = () => {
+  const today = new Date()
+  return dateformat(today, 'yyyy-mm-dd')
+}
+
+exports.generateDates = generateDates
+exports.getToday = getToday

@@ -12,3 +12,7 @@ API to build and get data about COVID in a custome format
 - this route builds the database, from 2020. Sept. 01. to the current date with `Date.now()`
 - confirmation header <b>MUST BE</b> included with the value: <i>true</i> or <i>allow</i>, eg.: `'confirmation': 'true'` or `'confirmation': 'allow'`<br>(this is checked by the allowRebuild middleware)
 
+#### GET /data/addLatestStatus
+- this will add the latest status update to MongoDB
+- 2 conditions have to be met: it doesn't exist already and the new update is avaliable  
+

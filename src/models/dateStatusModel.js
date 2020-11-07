@@ -9,4 +9,4 @@ const dateStatusesSchema = mongoose.Schema({
   recovered: { type: Number, required: true }
 })
 
-module.exports = mongoose.model('dateStatuses', dateStatusesSchema)
+module.exports = mongoose.model('statuses', dateStatusesSchema)
