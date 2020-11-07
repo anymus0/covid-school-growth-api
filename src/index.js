@@ -24,11 +24,11 @@ app.use('/data', data)
 const start = async () => {
   try {
     // MongoDB server connection setup
-    const mongoDB = process.env.DB_URI
-    await mongoose.connect(mongoDB, { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true })
-    const db = mongoose.connection
+    // const mongoDB = process.env.DB_URI
+    // await mongoose.connect(mongoDB, { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true })
+    // const db = mongoose.connection
     // Bind connection to error event (to get notification of connection errors)
-    db.on('error', console.error.bind(console, 'MongoDB connection error:'))
+    // db.on('error', console.error.bind(console, 'MongoDB connection error:'))
     console.log(`Server is listening on port ${port}`)
     app.listen(port)
   } catch (error) {
