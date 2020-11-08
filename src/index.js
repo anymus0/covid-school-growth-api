@@ -17,9 +17,11 @@ if (process.env.NODE_ENV !== 'production') {
   app.use(cors())
 }
 
-// import and use the "/form" route
-const data = require('./routes/data')
-app.use('/data', data)
+// import and use routes
+const dataMutate = require('./routes/dataMutate')
+const clientData = require('./routes/clientData')
+app.use('/datamutate', dataMutate)
+app.use('/clientData', clientData)
 
 const start = async () => {
   try {

@@ -13,6 +13,7 @@
   "author": "Balazs Nyirfa",
   "license": "ISC",
   "devDependencies": {
+    "@types/mongoose": "^5.7.37",
     "nodemon": "^2.0.6"
   },
   "dependencies": {
