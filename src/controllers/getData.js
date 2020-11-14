@@ -25,14 +25,19 @@ exports.getDailyCases = async (req, res) => {
 
     // loop through every status
     statuses.forEach(async (status, i) => {
-      // calculate number of new cases
-      const newCases = statuses[i].cases - statuses[i - 1].cases
-      const newDailyCase = {
-        date: status.date,
-        newCases: newCases
+      // skip sept. 01. as it has no previous day to calculate from
+      if (i === 0) {
+        console.log('skipping sept. 01.')
+      } else {
+        // calculate number of new cases
+        const newCases = statuses[i].cases - statuses[i - 1].cases
+        const newDailyCase = {
+          date: status.date,
+          newCases: newCases
+        }
+        // add newDailyCase obj to array
+        dailyCases.push(newDailyCase)
       }
-      // add newDailyCase obj to array
-      dailyCases.push(newDailyCase)
     })
 
     res.status(200).json({
