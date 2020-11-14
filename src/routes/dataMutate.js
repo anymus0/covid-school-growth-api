@@ -5,13 +5,13 @@ const allowRebuild = require('../middlewares/allowRebuild')
 // controllers
 const addData = require('../controllers/addData')
 
-// POST: /data/createDBmodel
+// POST: /datamutate/createDBmodel
 router.post('/createDBmodel', allowRebuild.Authorize, addData.createDBmodel)
 
-// POST /data/addLatestStatus
+// POST /datamutate/addLatestStatus
 router.post('/addLatestStatus', addData.addLatestStatus)
 
-// PUT /data/updateLatestStatus
+// PUT /datamutate/updateLatestStatus
 router.put('/updateLatestStatus', addData.updateLatestStatus)
 
 module.exports = router

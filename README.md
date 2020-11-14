@@ -22,3 +22,6 @@ API to build and get data about COVID in a custome format
 
 #### GET /clientdata/getAllStatuses
 - gets an array of every avaliable statuses found in MongoDB
+
+#### GET /clientdata/getDailyCases
+- gets the number of new cases for each day
