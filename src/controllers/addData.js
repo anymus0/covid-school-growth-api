@@ -107,7 +107,10 @@ exports.updateLatestStatus = async (req, res) => {
     // compare dates between DB and API
     const latestDBstatusDate = new Date(latestDBstatus.date)
     const latestAPIstatusDate = new Date(latestAPIstatus.last_update)
-    if (latestDBstatusDate < latestAPIstatusDate) {
+    if (
+      (latestDBstatusDate < latestAPIstatusDate) &&
+      (latestDBstatusDate.getDate() === latestAPIstatusDate.getDate())
+    ) {
       // update status in MongoDB
       const newStatusUpdate = {
         date: latestAPIstatusDate,
