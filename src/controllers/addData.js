@@ -19,7 +19,7 @@ exports.createDBmodel = async (req, res) => {
       const newStatus = new DateStatus({
         _id: new mongoose.Types.ObjectId(),
         country: status.country,
-        date: status.last_update,
+        date: new Date(status.last_update),
         cases: status.cases,
         deaths: status.deaths,
         recovered: status.recovered
