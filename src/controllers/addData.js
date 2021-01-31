@@ -60,7 +60,7 @@ exports.addLatestStatus = async (req, res) => {
       })
     } else {
       // fetch new status and add it to DB
-      const status = await Fetchy.Get(`https://covid19-api.org/api/status/hu?date=${Dates.getToday()}`)
+      const status = await Fetchy.Get(`https://covid19-api.org/api/status/hu`)
       const statusDate = new Date(status.last_update)
       if (statusDate.getDate() !== today.getDate()) {
         // skip if there's no status update yet in the COVID API
